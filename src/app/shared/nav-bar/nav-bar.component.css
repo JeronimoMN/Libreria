@@ -1,0 +1,5 @@
+a {
+    color: black; /* Establece el color del enlace a negro */
+    text-decoration: none; /* Elimina el subrayado */
+    display: inline-block; /* Permite aplicar padding/margin */
+}
