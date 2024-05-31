@@ -3,4 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: linear-gradient(90deg, rgba(213,210,255,1) 0%, rgba(158,180,207,1) 44%, rgba(37,78,87,1) 94%);
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
 }
