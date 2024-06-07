@@ -1,44 +1,101 @@
-<div class="container-fluid text-center vh-100" style=" background: linear-gradient(90deg, rgba(213,210,255,1) 0%, rgba(158,180,207,1) 44%, rgba(37,78,87,1) 94%);">
-
-  <div class="row">
-    <div class="col-4" style="display: flex; justify-content: center;">
-      
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="...">
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid text-center"
+  style=" background: linear-gradient(90deg, rgba(213,210,255,1) 0%, rgba(158,180,207,1) 44%, rgba(37,78,87,1) 94%);">
+  <div class="row justify-content-center">
+    <div class="col-8 mt-5">
+      <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+          <!--Filter Start-->
 
+          <form [formGroup]="filterForm" (click)="onSubmit()">
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Título</label>
+                  <input class="form-control" type="text" name="" id="" formControlName="titulo">
+                </div>
 
-      
-    </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Autor</label>
+                  <input class="form-control" type="text" name="" id="" formControlName="autor">
+                </div>
 
-
-    <div class="col-4" style="display: flex; justify-content: center;">
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="col-4" style="display: flex; justify-content: center;">
-      <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Categoria</label>
+                  <!--Pop-up Para seleccionar categoria-->
+                </div>
+              </div>
+            </div>
+            <div class="btn btn-success">Buscar</div>
+          </form>
+          {{this.filterForm.value | json}}
+          <!--Filter Ends-->
         </div>
       </div>
     </div>
   </div>
 
+  <div class="row mt-5">
+    <div class="col-4" style="display: flex; justify-content: center;">
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4" style="display: flex; justify-content: center;">
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4" style="display: flex; justify-content: center;">
+      <div class="card" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 </div>
