@@ -1,9 +1,68 @@
 <app-nav-bar></app-nav-bar>
-<div class="container-fluid"
+<div class="container-fluid text-center"
     style=" background: linear-gradient(90deg, rgba(213,210,255,1) 0%, rgba(158,180,207,1) 44%, rgba(37,78,87,1) 94%);">
-    <div class="row">
-        <div class="col-12">
+    <div class="row d-flex justify-content-center">
+        <div class="col-9">
             <app-last-books></app-last-books>
+        </div>
+        <div class="col-5 mt-4 mb-3">
+            <div class="card">
+                <div class="row justify-content-center align-content-center">
+                    <div class="col-10 justify-content-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Busca tu libro</h5>
+                            <p class="card-text">Ingresa el nombre del libro y el autor para saber si lo tenemos en
+                                nuestra
+                                biblioteca </p>
+                            <form [formGroup]="bookForm" (click)="onSubmit()">
+                                <div class="form-group mt-3">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12">
+                                            <label>Titulo del libro</label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <input class="form-control" type="text"
+                                                style="width: min-content; justify-self: center;"
+                                                formControlName="titulo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <div class="row justify-content-center">
+                                        <div class="col-auto">
+                                            <label>Nombre del Autor</label>
+                                        </div>
+                                        <div class="col-auto">
+                                            <input class="form-control" type="text"
+                                                style="width: min-content; justify-self: center;"
+                                                formControlName="autor">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn btn-success mt-3">Buscar</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card mt-4 mb-3">
+                <div class="row justify-content-center align-content-center">
+                    <div class="col-10 mt-3 justify-content-center">
+                        <img class="img-fluid mb-3" src="./../../assets/img/book.gif"
+                            style="width: 150px; border: 10rem; border-radius: 1000px;" alt="logo_enterprise">
+                        <h4>¿Quieres <strong>leer</strong> pero no sabes que leer?</h4>
+                        <div class="card-body">
+                            <p>Te invitamos a explorar nuestra biblioteca, en la que podras buscar un libro a tu gusto
+                            </p>
+                            <div class="btn btn-success" style="width: 10rem;" [routerLink]="['/catalogo-libros']">
+                                <strong>Ingresar</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
