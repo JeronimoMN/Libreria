@@ -1,22 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { compileNgModule } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, RouterLinkActive, MatDialogModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
-  get user (){
+  get user() {
     return this.loginForm.get('username') as FormControl
   }
 
-  get pass (){
+  get pass() {
     return this.loginForm.get('password') as FormControl
   }
 
@@ -25,9 +26,7 @@ export class LoginComponent {
     'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
   })
 
-  validateUser(){
+  validateUser() {
     console.log(this.loginForm.value)
   }
-
-
 }
