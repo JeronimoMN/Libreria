@@ -1,0 +1,11 @@
+<div class="sidenav-nav">
+  <ul class="nav flex-column align-content-center" >
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" 
+        style="text-decoration: none; color: black;">
+          <i [class]="data.icon"></i>
+          <span class="text-center"> {{data.label}}</span>
+        </a>
+      </li>
+  </ul>      
+</div>
