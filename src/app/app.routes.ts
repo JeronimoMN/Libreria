@@ -7,6 +7,7 @@ import { MainPageAdminComponent } from './admin/main-page-admin/main-page-admin.
 import { LoginComponent } from './shared/login/login.component';
 import { BookInventoryComponent } from './admin/book-inventory/book-inventory.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
+import { OrderInventoryComponent } from './admin/order-inventory/order-inventory.component';
 
 export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
@@ -17,7 +18,7 @@ export const routes: Routes = [
     { path: 'main-page-admin', component: MainPageAdminComponent, 
         children: [
             { path: 'book-inventory', component: BookInventoryComponent },
-            { path: 'order-inventory', component: BookInventoryComponent },
+            { path: 'order-inventory', component: OrderInventoryComponent },
             { path: 'accounts', component: AccountsComponent }
         ]
     },
