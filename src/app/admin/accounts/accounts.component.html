@@ -1,1 +1,86 @@
-<p>accounts works!</p>
+<div class="container-fluid ">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-6 mt-5">
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <div class="col">
+                        <div class="card-body">
+                            <!--Filter Start-->
+                            <form [formGroup]="accountForm">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="row align-items-center">
+                                                <div class="col-5">
+
+                                                    <label >Search by Username</label>
+                                                </div>
+                                                <div class="col-5">
+                                                    <input class="form-control" type="text" placeholder="Username"
+                                                        formControlName="username">
+                                                </div>
+                                                <div class="col-2">
+                                                    <button class="btn btn-success" 
+                                                    (click)="searchAccount()"
+                                                    [disabled]="accountForm.invalid">Buscar</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            {{this.accountForm.value | json}}
+                            <!--Filter Ends-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card " style="border: none;">
+                <div class="card-body">
+                    <form action="" class="form-group">
+                        <table class="table table-bordered table-striped mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email </th>
+                                    <th scope="col">State</th>
+                                    <th scope="col">INfo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>JMN</td>
+                                    <td>jeronimomurillonarvaez&#64;gmail.com</td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckChecked" checked>
+                                        </div>
+                                    </td>
+                                    <td>Hello</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>maricarme</td>
+                                    <td>maricarme&#64;hotmail.com</td>
+                                    <td>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckChecked" checked>
+                                        </div>
+                                    </td>
+                                    <td>There</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
