@@ -2,15 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NavBarComponent } from '../shared/nav-bar/nav-bar.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MatDialog, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
+import { BookComponent } from '../book/book.component';
 
 @Component({
   selector: 'app-catalogo-libros',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NavBarComponent],
+  imports: [CommonModule, ReactiveFormsModule, NavBarComponent, RouterLink, RouterLinkActive, MatDialogModule],
   templateUrl: './catalogo-libros.component.html',
   styleUrl: './catalogo-libros.component.css'
 })
 export class CatalogoLibrosComponent {
+
+  constructor(private dialogRef: MatDialog){}
 
   filterForm = new FormGroup({
     'titulo': new FormControl(''),
@@ -19,7 +24,11 @@ export class CatalogoLibrosComponent {
   })
 
   onSubmit(){
-    console.log(this.filterForm.value)
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.minWidth = '90%'; // Ancho mínimo
+
+    dialogConfig.hasBackdrop = true;
+    this.dialogRef.open(BookComponent, dialogConfig)
   }
 
 
